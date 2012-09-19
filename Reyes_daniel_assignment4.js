@@ -25,8 +25,23 @@ var myLibrary = function(){
             return console.log("This phone number is valid!"); 
         } else {
             return console.log("Sorry! this phone number is invalid!"); 
-        }
-    }
+        };
+    };
+    
+    //Email check function
+    var emailCheck = function (email) {
+    	
+    	var emailAddress = email
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/
+    
+    	if (emailPattern.test(emailAddress)) {
+        console.log("This email address is valid!");
+        } else {
+        console.log("Sorry! This is an invalid email address!");
+        
+        };
+    };
+    
 		
 	//Name function
 	var areYouDaniel = function(val){
@@ -51,7 +66,8 @@ var myLibrary = function(){
 		"checkNumeric": checkNumeric,
 		"areYouDaniel": areYouDaniel,
 		"checkURL": checkURL,
-		"checkPhone": checkPhone
+		"checkPhone": checkPhone,
+		"emailCheck": emailCheck
 	};	
 
 };
@@ -63,6 +79,6 @@ console.log(newLib.checkNumeric(15));
 console.log(newLib.areYouDaniel("Daniel"));
 console.log(newLib.checkURL("Fullsail.com"));
 console.log(newLib.checkPhone("321-745-7444"));
-
+console.log(newLib.emailCheck("Dreyes007@gmail.com"));
 
 
