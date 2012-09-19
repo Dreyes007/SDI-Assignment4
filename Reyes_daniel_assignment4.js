@@ -16,6 +16,16 @@ var myLibrary = function(){
 		};
 			
 	};
+	//Number format
+	var decNumber = function (val) {
+    	var number = val
+    	number.toFixed(2)
+    	return console.log(number.toFixed(2));
+    };
+	
+	
+	
+	
 	//Phone # Function
 	var checkPhone = function (tryNumber) {
         var phoneNumber = tryNumber;
@@ -67,7 +77,8 @@ var myLibrary = function(){
 		"areYouDaniel": areYouDaniel,
 		"checkURL": checkURL,
 		"checkPhone": checkPhone,
-		"emailCheck": emailCheck
+		"emailCheck": emailCheck,
+		"decNumber": decNumber
 	};	
 
 };
@@ -80,5 +91,6 @@ console.log(newLib.areYouDaniel("Daniel"));
 console.log(newLib.checkURL("Fullsail.com"));
 console.log(newLib.checkPhone("321-745-7444"));
 console.log(newLib.emailCheck("Dreyes007@gmail.com"));
+console.log(newLib.decNumber(2.1));
 
 
