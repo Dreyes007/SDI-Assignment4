@@ -67,7 +67,7 @@ var myLibrary = function(){
         return ("This is a http url");
     	
     	};
- 
+    	return thisUrl
     };
 
 	//Title-case Function
