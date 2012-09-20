@@ -106,5 +106,3 @@ console.log(newLib.emailCheck("Dreyes007@gmail.com"));
 console.log(newLib.daysLeft(new Date(2012, 10, 22)));
 console.log(newLib.UrlCheck("https://orgsync.com/"));
 console.log(newLib.upperCase("daniel a reyes"));
-
-
