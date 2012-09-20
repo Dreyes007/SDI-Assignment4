@@ -5,17 +5,7 @@
 
 var myLibrary = function(){
 
-	//Check numeric function
-	var checkNumeric = function(val){
-		
-		if(isNaN(val)){
-			return false;
-		} else {
-			return true;
-			
-		};
-			
-	};
+
 	//Number format
 	var decNumber = function (val) {
     	var number = val
@@ -53,27 +43,8 @@ var myLibrary = function(){
         };
         return emailAddress;
     };	
-        
+        			
 		
-	//Name function
-	var areYouDaniel = function(val){
-		if (val === "Daniel") {
-			return true;
-		} else {
-			return false;
-		};
-	};
-	
-	//Check URL function
-	var checkURL = function(val){
-		var first = val.substring(0,val.indexOf(":"));
-		if((first === "http") || (first === "https")){
-			return true;
-		} else {
-			return false;
-		};
-	};
-	
 	//Days Difference
 	var daysLeft = function (checkDate) {
     	var vacationDays = checkDate;
@@ -82,28 +53,58 @@ var myLibrary = function(){
     	return (Math.ceil((vacationDays.getTime() - today.getTime()) / (one_day)) + " days untill Thanks Giving breaks starts! ");
     };
 
+	//URL Check Function
+	var UrlCheck = function (UrlTest) {
+    	var url = UrlTest
+    	
+    	
+    	var exp = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;    
+    	var thisUrl = exp.test(url);    	  
+
+    	if (url.charAt(4) == "s") {
+        return ("This is a https url");
+        } if (url.charAt(4) == ":") {
+        return ("This is a http url");
+    	
+    	};
+ 
+    };
+
+	//Title-case Function
+	var upperCase = function (val) {
+ 
+ 
+    	String.prototype.toProperCase = function () {
+ 
+        return this.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+
+        };
+    	val.toProperCase();
+    	return (val.toProperCase()); 
+    };
 	
 	return {
-		"checkNumeric": checkNumeric,
-		"areYouDaniel": areYouDaniel,
-		"checkURL": checkURL,
+
+		"decNumber": decNumber,
 		"checkPhone": checkPhone,
 		"emailCheck": emailCheck,
-		"decNumber": decNumber,		
-		"daysLeft": daysLeft
+		"daysLeft": daysLeft,
+		"UrlCheck": UrlCheck,
+		"upperCase": upperCase								
+		
 	};	
 
 };
 
-
 var newLib = new myLibrary();
 
-console.log(newLib.checkNumeric(15));
-console.log(newLib.areYouDaniel("Daniel"));
-console.log(newLib.checkURL("Fullsail.com"));
+console.log(newLib.decNumber(2.1));
 console.log(newLib.checkPhone("321-745-7444"));
 console.log(newLib.emailCheck("Dreyes007@gmail.com"));
-console.log(newLib.decNumber(2.1));
 console.log(newLib.daysLeft(new Date(2012, 10, 22)));
+console.log(newLib.UrlCheck("https://orgsync.com/"));
+console.log(newLib.upperCase("daniel a reyes"));
 
 
